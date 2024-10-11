@@ -1,6 +1,5 @@
 import {Request} from "../utils/request.ts";
 import type {Response} from "../models/response.ts";
-import {PostSignResult} from "../models/api/sign.ts";
 import {ResultReq} from "../models/result.ts";
 import {Builder} from "../utils/builder.ts";
 import {DeleteICPResult, GetICPResult, PostICPResult} from "../models/api/icp.ts";

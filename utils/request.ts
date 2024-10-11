@@ -1,4 +1,4 @@
-import axios, {type AxiosError, type AxiosInstance, type AxiosResponse} from "axios";
+import axios, {type AxiosInstance, type AxiosResponse} from "axios";
 
 export class Request {
     /**
