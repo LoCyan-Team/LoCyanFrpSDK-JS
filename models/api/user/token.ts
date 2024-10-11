@@ -1,11 +1,13 @@
-import type { ResultData } from '../result.ts'
+import type { ResultData } from '../../result.ts'
 
-export class GetSignResult implements ResultData {
+export class GetUserTokenResult implements ResultData {
   constructor(
     public status: number,
     public message: string,
     public data: {
-      status: boolean
+      id: number
+      email: string
+      username: string
     }
   ) {
     this.status = status
@@ -14,16 +16,11 @@ export class GetSignResult implements ResultData {
   }
 }
 
-export class PostSignResult implements ResultData {
+export class DeleteUserTokenResult implements ResultData {
   constructor(
     public status: number,
     public message: string,
-    public data: {
-      get_traffic: number
-      sign_count: number
-      total_get_traffic: number
-      first_sign: boolean
-    }
+    public data: {}
   ) {
     this.status = status
     this.message = message

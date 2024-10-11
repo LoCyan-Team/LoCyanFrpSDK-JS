@@ -1,13 +1,13 @@
-import {Request} from '../utils/request'
-import {Builder} from "../utils/builder.ts";
+import { Request } from '../utils/request'
+import { Builder } from '../utils/builder.ts'
 
-import {GetSignResult, PostSignResult} from "../models/api/sign";
-import type {Response} from "../models/response";
-import {ResultReq} from "../models/result";
+import { GetSignResult, PostSignResult } from '../models/api/sign'
+import type { Response } from '../models/response'
+import { ResultReq } from '../models/result'
 
 export class sign {
   private readonly req = new Request()
-  private readonly token: string;
+  private readonly token: string
 
   /**
    * /api/v2/sign
@@ -23,24 +23,18 @@ export class sign {
    */
   public async get(username: string): Promise<Response> {
     const rs = await this.req.get(
-        '/sign',
-        {
-          username: username
-        },
-        {
-          'Authorization': 'Bearer ' + this.token
-        }
+      '/sign',
+      {
+        username: username
+      },
+      {
+        Authorization: 'Bearer ' + this.token
+      }
     )
-    const res = new GetSignResult(
-        rs.data.status,
-        rs.data.message,
-        {
-          status: rs.data.data.status,
-        }
-    )
-    const rsx = new ResultReq(
-        rs.status
-    )
+    const res = new GetSignResult(rs.data.status, rs.data.message, {
+      status: rs.data.data.status
+    })
+    const rsx = new ResultReq(rs.status)
     return Builder.build(res, rsx)
   }
 
@@ -50,28 +44,22 @@ export class sign {
    */
   public async post(username: string): Promise<Response> {
     const rs = await this.req.post(
-        '/sign',
-        {
-          username: username
-        },
-        null,
-        {
-          'Authorization': 'Bearer ' + this.token
-        },
+      '/sign',
+      {
+        username: username
+      },
+      null,
+      {
+        Authorization: 'Bearer ' + this.token
+      }
     )
-    const res = new PostSignResult(
-        rs.data.status,
-        rs.data.message,
-        {
-          first_sign: rs.data.data.first_sign,
-          get_traffic: rs.data.data.get_traffic,
-          sign_count: rs.data.data.sign_count,
-          total_get_traffic: rs.data.data.total_get_traffic
-        }
-    )
-    const rsx = new ResultReq(
-        rs.status
-    )
+    const res = new PostSignResult(rs.data.status, rs.data.message, {
+      first_sign: rs.data.data.first_sign,
+      get_traffic: rs.data.data.get_traffic,
+      sign_count: rs.data.data.sign_count,
+      total_get_traffic: rs.data.data.total_get_traffic
+    })
+    const rsx = new ResultReq(rs.status)
     return Builder.build(res, rsx)
   }
 }

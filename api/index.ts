@@ -5,13 +5,13 @@ import icp from './icp.api'
 // import proxy from './proxy'
 // import verification from './verification'
 import sign from './sign.api'
-// import user from './user'
+import user from './user'
 // import email from './email'
 // import notice from './notice'
 // import minecraft from './minecraft'
 
 export default {
-  // user: user,
+  user: user,
   // auth: auth,
   // email: email,
   // verification: verification,
@@ -19,7 +19,7 @@ export default {
   // node: node,
   // donate: donate,
   sign: sign,
-  icp: icp,
+  icp: icp
   // notice: notice,
   // minecraft: minecraft
 }

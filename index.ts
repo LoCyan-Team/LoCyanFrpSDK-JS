@@ -10,9 +10,9 @@ import api from './api'
  * Copyright 2024 杭州樱芸网络科技有限公司 (Hangzhou Yingyun Network Technology Co., Ltd).
  */
 export class LoCyanFrp {
-    public api = api
+  public api = api
 
-    public authorize(username: string, password: string) {
-        // TODO: 获取登录令牌
-    }
+  public authorize(username: string, password: string) {
+    // TODO: 获取登录令牌
+  }
 }
