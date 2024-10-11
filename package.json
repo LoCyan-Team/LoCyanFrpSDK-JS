@@ -1,5 +1,13 @@
 {
   "name": "@locyanfrp/js-sdk",
+  "description": "适用于 LoCyanFrp 的 JS SDK",
+  "keywords": [
+    "locyanfrp"
+  ],
+  "homepage": "https://github.com/LoCyan-Team/LoCyanFrpSDK-JS",
+  "license": "BSD-3-Clause",
+  "repository": "github:LoCyan-Team/LoCyanFrpSDK-JS",
+  "private": false,
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
